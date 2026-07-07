@@ -6,39 +6,19 @@
 
 ## Quick Install
 
-### Linux (Fedora/RHEL/CentOS)
+> **Note:** Package manager distribution (dnf, apt, brew, scoop) is coming soon! For now, use the manual installation below.
 
-```bash
-# Install Vivio
-sudo dnf install vivio
-```
+**Coming Soon:**
+- `sudo dnf install vivio` (Fedora/RHEL via COPR)
+- `sudo apt install vivio` (Ubuntu/Debian via PPA)
+- `brew install vivio` (macOS via Homebrew tap)
+- `scoop install vivio` (Windows)
 
-### Linux (Ubuntu/Debian)
-
-```bash
-# Install Vivio
-sudo apt install vivio
-```
-
-### macOS
-
-```bash
-# Install Vivio 
-brew install vivio
-```
-
-### Windows
-
-```powershell
-# Install Vivio
-scoop install vivio
-```
-
-> **Note:** Package manager distribution is planned. For now, see [Manual Installation](#manual-installation-current-method) below.
+For now, see [Manual Installation](#manual-installation) below.
 
 ---
 
-## Manual Installation
+## Manual Installation (Current Method)
 
 ### 1. Download Binary
 
