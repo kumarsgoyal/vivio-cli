@@ -1,0 +1,58 @@
+run:
+  timeout: 5m
+  go: '1.22'
+
+linters:
+  enable:
+    # Code quality
+    - gocritic      # Go source code linter
+    - staticcheck   # Advanced static analysis
+    - unconvert     # Remove unnecessary type conversions
+
+    # Security
+    - gosec         # Security vulnerabilities
+
+    # Style & Formatting
+    - gofmt         # Standard Go formatter
+    - gci           # Import organization
+    - misspell      # Spelling errors
+
+    # Best practices
+    - nolintlint    # Validates nolint directives
+    - errcheck      # Checks for unchecked errors
+    - govet         # Go vet examines Go source code
+
+linters-settings:
+  gci:
+    sections:
+      - standard                        # Standard library
+      - default                         # External packages
+      - prefix(github.com/viviotv/vivio) # Local module
+
+  gosec:
+    excludes:
+      - G602  # High false positives (slice bounds checking)
+      - G306  # File permissions (we allow 0644 for cache files)
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - style
+      - performance
+    disabled-checks:
+      - whyNoLint  # We don't require comments on nolint directives
+
+issues:
+  exclude-dirs:
+    - bin
+    - examples
+
+  exclude-rules:
+    # Exclude some linters from running on tests files
+    - path: _test\.go
+      linters:
+        - gosec
+        - errcheck
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
